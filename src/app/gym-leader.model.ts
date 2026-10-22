@@ -5,5 +5,5 @@ export interface GymLeader {
   town: string;
   badge: string;
   specialty: string;
-  aceLevel: number; // 1-100, validated by the server
+  aceLevel: number;
 }

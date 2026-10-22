@@ -19,7 +19,7 @@ const GymLeader = mongoose.model('GymLeader', new mongoose.Schema({
     town:      { type: String, required: true },
     badge:     { type: String, required: true },
     specialty: { type: String, required: true },
-    aceLevel:  { type: Number, required: true, min: 1, max: 100 }
+    aceLevel:  { type: Number, required: true, min: 1, max: 100 },
 }));
 
 app.get('/api/leaders', async (req, res) => {
