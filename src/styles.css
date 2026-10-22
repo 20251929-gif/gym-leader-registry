@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+nav[aria-label='Main navigation'] {
+  background: #1f2937;
+}
+nav[aria-label='Main navigation'] ul {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+}
+nav[aria-label='Main navigation'] a {
+  color: #f9fafb;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+nav[aria-label='Main navigation'] a:hover,
+nav[aria-label='Main navigation'] a:focus-visible {
+  text-decoration: underline;
+}
+nav[aria-label='Main navigation'] a.active {
+  background: #f9fafb;
+  color: #111827;
+  font-weight: 600;
+}
