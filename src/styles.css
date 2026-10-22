@@ -1,0 +1,57 @@
+:root {
+  --primary: #1f2937;
+  --primary-contrast: #f9fafb;
+  --border: #d1d5db;
+  --error: #b91c1c;
+  --focus: #1d4ed8;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background: #ffffff;
+  color: var(--primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input,
+select,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  font: inherit;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}

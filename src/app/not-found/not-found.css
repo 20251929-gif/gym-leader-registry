@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+a {
+  color: var(--focus);
+}

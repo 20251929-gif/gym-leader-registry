@@ -1,0 +1,23 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filters button.selected {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.error {
+  color: var(--error);
+}

@@ -42,27 +42,7 @@ type RegionFilter = 'All' | 'Kanto' | 'Johto' | 'Hoenn';
       }
     </ul>
   `,
-  styles: `
-    .filters {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .filters button.selected {
-      background: #1f2937;
-      color: #f9fafb;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-      padding: 0;
-      list-style: none;
-    }
-    .error {
-      color: #b91c1c;
-    }
-  `,
+styleUrls: ['./leader-list.css'],
 })
 export class LeaderList {
   private readonly service = inject(GymLeaderService);

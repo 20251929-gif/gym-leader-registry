@@ -21,6 +21,8 @@ import { GymLeader } from '../gym-leader.model';
       <dd>{{ leader().specialty }}</dd>
       <dt>Ace level</dt>
       <dd>{{ leader().aceLevel }}</dd>
+      <dt>Motto</dt>
+      <dd>{{ leader().motto || 'N/A' }}</dd>
     </dl>
     <div class="actions">
       <button type="button" (click)="onEdit()" [attr.aria-label]="'Edit ' + leader().name">
@@ -31,47 +33,7 @@ import { GymLeader } from '../gym-leader.model';
       </button>
     </div>
   `,
-  styles: `
-    :host {
-      display: block;
-      padding: 1rem;
-      border: 2px solid #4b5563;
-      border-left-width: 8px;
-      border-radius: 6px;
-      background: #f9fafb;
-      color: #111827;
-    }
-    :host(.kanto) {
-      border-color: #b91c1c;
-      background: #fef2f2;
-    }
-    :host(.johto) {
-      border-color: #ffee06;
-      background: #fefce8;
-    }
-    :host(.hoenn) {
-      border-color: #1d4ed8;
-      background: #eff6ff;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    dl {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      gap: 0.25rem 1rem;
-    }
-    dt {
-      font-weight: 600;
-    }
-    dd {
-      margin: 0;
-    }
-    .actions {
-      display: flex;
-      gap: 0.5rem;
-    }
-  `,
+  styleUrls: ['./leader-card.css'],
 })
 export class LeaderCard {
   readonly leader = input.required<GymLeader>();

@@ -9,5 +9,6 @@ import { RouterLink } from '@angular/router';
     <p>The page you were looking for doesn't exist.</p>
     <a routerLink="/home">Back to Home</a>
   `,
+  styleUrls: ['./not-found.css'],
 })
 export class NotFound {}

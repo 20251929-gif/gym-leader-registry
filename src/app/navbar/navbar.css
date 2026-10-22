@@ -1,0 +1,30 @@
+nav {
+  background: var(--primary);
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+}
+
+a {
+  color: var(--primary-contrast);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+a.active {
+  background: var(--primary-contrast);
+  color: #111827;
+  font-weight: 600;
+}

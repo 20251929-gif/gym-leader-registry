@@ -110,23 +110,7 @@ import { GymLeader } from '../gym-leader.model';
       </div>
     </form>
   `,
-  styles: `
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      margin-bottom: 1rem;
-      max-width: 28rem;
-    }
-    .error {
-      color: #b91c1c;
-      min-height: 1.25rem;
-    }
-    .actions {
-      display: flex;
-      gap: 0.5rem;
-    }
-  `,
+styleUrls: ['./leader-form.css'],
 })
 export class LeaderForm {
   private readonly fb = inject(FormBuilder);
