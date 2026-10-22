@@ -1,24 +1,246 @@
-form {
+
+:host {
+  display: block;
+  font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 700;
+  color: #292524;
   padding: 1.5rem;
-  border-radius: 6px;
-  background: #ffffff;
-  border: 1px solid var(--border);
 }
 
-.field {
+:host h1 {
+  margin: 0 0 1.5rem;
+  color: #ffcb05;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 1px #2a75bb;
+  text-shadow:
+    2px 2px 0 #2a75bb,
+    4px 4px 0 #1a1a1a;
+}
+
+:host form {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 40rem;
+  padding: 2rem;
+  border: 4px solid #b91c1c;
+  border-radius: 18px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgb(255 203 5 / 12%),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #fffdf5, #fef3c7);
+  box-shadow:
+    0 0 0 4px #292524,
+    0 10px 0 rgb(0 0 0 / 20%),
+    0 18px 35px rgb(0 0 0 / 25%);
+}
+
+:host .field {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-  max-width: 28rem;
+  gap: 0.45rem;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.25rem;
 }
 
-.error {
-  color: var(--error);
-  min-height: 1.25rem;
+:host label {
+  color: #991b1b;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.actions {
+:host input,
+:host select,
+:host textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid #d6b98c;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #292524;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+:host textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+:host input::placeholder,
+:host textarea::placeholder {
+  color: #a8a29e;
+}
+
+:host input:focus,
+:host select:focus,
+:host textarea:focus {
+  border-color: #2a75bb;
+  background: #fffef7;
+  box-shadow: 0 0 0 4px rgb(42 117 187 / 18%);
+}
+
+:host input:disabled,
+:host select:disabled,
+:host textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+:host .error {
+  min-height: 1.1rem;
+  margin: 0.1rem 0 0;
+  color: #b91c1c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:host p.error {
+  max-width: 40rem;
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid #b91c1c;
+  border-radius: 10px;
+  background: #fee2e2;
+}
+
+:host .actions {
   display: flex;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+:host button {
+  min-height: 46px;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #292524;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #ffffff;
+  box-shadow: 0 4px 0 #7f1d1d;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+:host button:hover:not(:disabled) {
+  background: #ef4444;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #7f1d1d;
+}
+
+:host button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #7f1d1d;
+}
+
+:host button:focus-visible {
+  outline: 3px solid #2a75bb;
+  outline-offset: 4px;
+}
+
+/* Disabled submit button */
+:host button:disabled {
+  background: #a8a29e;
+  color: #f5f5f4;
+  border-color: #78716c;
+  box-shadow: 0 3px 0 #57534e;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Cancel button: Pokédex blue */
+:host button[type='button'] {
+  background: #2a75bb;
+  box-shadow: 0 4px 0 #174575;
+}
+
+:host button[type='button']:hover {
+  background: #3b91d9;
+  box-shadow: 0 6px 0 #174575;
+}
+
+@media (max-width: 600px) {
+  :host {
+    padding: 1rem;
+  }
+
+  :host form {
+    padding: 1.25rem;
+    border-width: 3px;
+  }
+
+  :host .actions {
+    flex-direction: column;
+  }
+
+  :host button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host input,
+  :host select,
+  :host textarea,
+  :host button {
+    transition: none;
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem 1.5rem;
+}
+
+:host h1 {
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+:host form {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+:host > p.error {
+  width: 100%;
+  max-width: 40rem;
+  box-sizing: border-box;
 }

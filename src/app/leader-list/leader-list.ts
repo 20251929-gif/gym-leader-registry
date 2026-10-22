@@ -38,7 +38,7 @@ type RegionFilter = 'All' | 'Kanto' | 'Johto' | 'Hoenn';
           />
         </li>
       } @empty {
-        <li>No Gym Leaders registered yet.</li>
+        <li class="empty">No Gym Leaders registered yet.</li>
       }
     </ul>
   `,

@@ -1,22 +1,87 @@
-ul {
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  width: 100%;
+  max-width: 36rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 3px solid #111111;
+  box-shadow: 0 8px 0 #2a75bb, 0 12px 24px rgb(0 0 0 / 0.2);
+  text-align: center;
+}
+
+/* Pokémon-inspired heading */
+h1 {
+  margin-top: 0;
+  font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffcb05;
+  -webkit-text-stroke: 1px #2a75bb;
+  text-shadow:
+    2px 2px 0 #2a75bb,
+    3px 3px 0 #1a1a1a;
+}
+
+/* Region count cards */
+.counts {
   display: flex;
   gap: 1rem;
   padding: 0;
   list-style: none;
 }
 
-li {
+.counts li {
   flex: 1;
   padding: 1rem;
-  border-radius: 6px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  font-weight: 600;
-  text-align: center;
+  border-radius: 8px;
+  border: 3px solid #111111;
+  border-left: 6px solid var(--primary);
+  font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #111111;
+}
+
+.number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #2a75bb;
+  text-shadow: 1px 1px 0 #ffffff;
+}
+
+.kanto {
+  background: #fef2f2;
+  border-color: #b91c1c;
+}
+
+.johto {
+  background: #fefce8;
+  border-color: #a16207;
+}
+
+.hoenn {
+  background: #eff6ff;
+  border-color: #1d4ed8;
 }
 
 @media (max-width: 600px) {
-  ul {
+  .counts {
     flex-direction: column;
+  }
+
+  .card {
+    padding: 1.25rem;
   }
 }

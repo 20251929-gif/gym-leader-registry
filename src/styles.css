@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Pokemon Solid', 'Pokemon Hollow', 'ITC Kabel Ultra', 'Gill Sans', sans-serif;
   background: #f3f4f6;
   color: #111827;
 }
@@ -54,4 +54,36 @@ textarea:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
+}
+
+body:has(app-leader-list, app-leader-form, app-home) {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+
+  background-image:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgb(255 255 255 / 0.2),
+      transparent 55%
+    ),
+
+    linear-gradient(
+      to bottom,
+      #ef4444 0%,
+      #dc2626 38%,
+      #202020 48%,
+      #111111 52%,
+      #f5f5f5 62%,
+      #e5e7eb 100%
+    ),
+
+    repeating-linear-gradient(
+      115deg,
+      rgb(255 255 255 / 0.035) 0 2px,
+      transparent 2px 38px
+    );
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
