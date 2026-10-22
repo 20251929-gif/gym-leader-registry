@@ -3,34 +3,11 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GymLeaderService } from '../gym-leader';
 import { GymLeader } from '../gym-leader.model';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-
 
 @Component({
   selector: 'app-leader-form',
-    imports: [ReactiveFormsModule, RouterLink, RouterLinkActive],
+  imports: [ReactiveFormsModule],
   template: `
-    <nav aria-label="Main navigation">
-    <ul>
-      <li>
-        <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-      </li>
-      <li>
-        <a
-          routerLink="/leaders"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          ariaCurrentWhenActive="page"
-          >Leaders</a
-        >
-      </li>
-      <li>
-        <a routerLink="/leaders/new" routerLinkActive="active" ariaCurrentWhenActive="page"
-          >Add Leader</a
-        >
-      </li>
-    </ul>
-  </nav>
     <h1>{{ heading() }}</h1>
 
     @if (errorMessage()) {
@@ -112,7 +89,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         />
         <div id="aceLevel-error" class="error" role="alert">
           @if (controls.aceLevel.touched && controls.aceLevel.invalid) {
-            Ace level must be between 1 and 100.
+            Ace level must be a whole number between 1 and 100.
           }
         </div>
       </div>
@@ -175,7 +152,10 @@ export class LeaderForm {
     town: ['', Validators.required],
     badge: ['', Validators.required],
     specialty: ['', Validators.required],
-    aceLevel: [1, [Validators.required, Validators.min(1), Validators.max(100)]],
+    aceLevel: [
+      1,
+      [Validators.required, Validators.min(1), Validators.max(100), Validators.pattern(/^\d+$/)],
+    ],
     motto: ['', Validators.maxLength(150)],
   });
 

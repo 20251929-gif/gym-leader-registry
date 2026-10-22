@@ -6,7 +6,7 @@ import { GymLeader } from './gym-leader.model';
 @Service()
 export class GymLeaderService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = 'http://localhost:5000/api/leaders';
+private readonly apiUrl = 'http://localhost:3000/api/leaders';
 
   readonly leaders = signal<GymLeader[]>([]);
 

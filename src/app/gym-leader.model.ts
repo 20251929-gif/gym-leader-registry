@@ -6,4 +6,5 @@ export interface GymLeader {
   badge: string;
   specialty: string;
   aceLevel: number;
+  motto?: string;
 }

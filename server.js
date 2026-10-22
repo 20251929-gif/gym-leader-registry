@@ -9,17 +9,21 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGODB_URI);
 
-app.listen(5000, () => {
-    console.log('Server is running on port 5000');
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 })
 
 const GymLeader = mongoose.model('GymLeader', new mongoose.Schema({
-    name:      { type: String, required: true },
-    region:    { type: String, required: true },
+    name:      { type: String, required: true, minlength: 2 },
+    region:    { type: String, required: true, enum: ['Kanto', 'Johto', 'Hoenn'] },
     town:      { type: String, required: true },
     badge:     { type: String, required: true },
     specialty: { type: String, required: true },
-    aceLevel:  { type: Number, required: true, min: 1, max: 100 },
+    aceLevel:  {
+        type: Number, required: true, min: 1, max: 100,
+        validate: { validator: Number.isInteger, message: 'aceLevel must be a whole number!' }
+    },
+    motto:     { type: String, maxlength: 150 }
 }));
 
 app.get('/api/leaders', async (req, res) => {

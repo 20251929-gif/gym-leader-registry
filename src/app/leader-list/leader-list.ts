@@ -1,38 +1,14 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import { DOCUMENT } from '@angular/core';
+import { Component, computed, DOCUMENT, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { GymLeaderService } from '../gym-leader';
 import { LeaderCard } from '../leader-card/leader-card';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 
 type RegionFilter = 'All' | 'Kanto' | 'Johto' | 'Hoenn';
 
 @Component({
   selector: 'app-leader-list',
-  imports: [LeaderCard, RouterLink, RouterLinkActive],
+  imports: [LeaderCard],
   template: `
-  <nav aria-label="Main navigation">
-    <ul>
-      <li>
-        <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-      </li>
-      <li>
-        <a
-          routerLink="/leaders"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          ariaCurrentWhenActive="page"
-          >Leaders</a
-        >
-      </li>
-      <li>
-        <a routerLink="/leaders/new" routerLinkActive="active" ariaCurrentWhenActive="page"
-          >Add Leader</a
-        >
-      </li>
-    </ul>
-  </nav>
-  
     <h1>Gym Leaders</h1>
 
     <div role="group" aria-label="Filter by region" class="filters">
